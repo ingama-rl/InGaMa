@@ -11,7 +11,7 @@ version = {attr = "jaxmarl.__version__"}
 
 [project]
 name = "jaxmarl"
-readme = "README.md"
+readme = "JaxMARL_README.md"
 description = "Multi-Agent Reinforcement Learning with JAX"
 authors = [
     {name = "Foerster Lab for AI Research", email = "arutherford@robots.ox.ac.uk"},
