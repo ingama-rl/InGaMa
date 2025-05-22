@@ -7,10 +7,10 @@ build-backend = "setuptools.build_meta"
 include = ['jaxmarl*']
 
 [tool.setuptools.dynamic]
-version = {attr = "ingama-jaxmarl.__version__"}
+version = {attr = "jaxmarl.__version__"}
 
 [project]
-name = "ingama-jaxmarl"
+name = "jaxmarl"
 readme = "README.md"
 description = "Multi-Agent Reinforcement Learning with JAX"
 authors = [
