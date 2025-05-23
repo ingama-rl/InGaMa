@@ -1,50 +1,50 @@
-"LR_CONT": 0.0005
-"LR_COMM": 0.0005
-"NUM_ENVS": 256
-"NUM_STEPS": 40
-"TOTAL_TIMESTEPS": 1.e8
-"FC_DIM_SIZE": 128
-"CRITIC_FC_DIM_SIZE": 256
-"COMM_DIM": 32
-"ATTENTION_LEN": 4
-"ATTENTION_DIM": 64
-"GRU_HIDDEN_DIM": 64
-"ATTENTION_NUM_HEADS": 4
-"UPDATE_EPOCHS": 8
-"NUM_MINIBATCHES": 4
-"GAMMA": 0.99
-"GAE_LAMBDA": 0.95
-"CLIP_EPS_COMM": 0.2
-"CLIP_EPS_CONT": 0.2
-"SCALE_CLIP_EPS": False
-"ENT_COEF_CONT": 0.01
-"ENT_COEF_COMM": 0.01
-"MIN_KL_COEF": 0.0000000
-"MAX_KL_COEF": 0.2
-"KL_COEF_CONT": 0.00
-"KL_COEF_COMM": 0.00
-"KL_TARGET_CONT": 0.01
-"KL_TARGET_COMM": 0.1
-"HF_COEF": 0.0
-"VF_COEF": 0.5
-"MAX_GRAD_NORM_AC": 0.5
-"MAX_GRAD_NORM_CR": 0.5
-"ACTIVATION": "relu"
-"OBS_WITH_AGENT_ID": True
-"SEED": 0
-"SAVE_FREQ": 0.1
-"NUM_EVAL_TRAJECTORIES": 10
-"LOG_INTERVAL": 1
-"COMM_INTERVAL": 1
-"CONT_INTERVAL": 1
-"SIMUL": 1
+"LR_CONT": 0.0005 # control policy learning rate
+"LR_COMM": 0.0005 # communication policy learning rate
+"NUM_ENVS": 256 # number of environments
+"NUM_STEPS": 40 # number of steps for each environment in each training epoch
+"TOTAL_TIMESTEPS": 1.e8 # total number of training timesteps
+"FC_DIM_SIZE": 128 # architecture parameter
+"CRITIC_FC_DIM_SIZE": 256 # architecture parameter
+"COMM_DIM": 32 # architecture parameter - message size (for each agent)
+"ATTENTION_LEN": 4 # architecture parameter
+"ATTENTION_DIM": 64 # architecture parameter
+"GRU_HIDDEN_DIM": 64 # architecture parameter
+"ATTENTION_NUM_HEADS": 4 # architecture parameter
+"ACTIVATION": "relu" # activation throughout the architecture
+"UPDATE_EPOCHS": 8 # number of update epochs in each training
+"NUM_MINIBATCHES": 4 # number of minibatches in each epoch
+"GAMMA": 0.99 # decay parameter
+"GAE_LAMBDA": 0.95 # decay parameter for advantage
+"CLIP_EPS_COMM": 0.2 # communication policy PPO clip parameter
+"CLIP_EPS_CONT": 0.2 # control policy PPO clip parameter
+"SCALE_CLIP_EPS": False # boolean, scale PPO clip parameter according to the number of agents
+"ENT_COEF_CONT": 0.01 # control policy entropy loss coefficient
+"ENT_COEF_COMM": 0.01 # communication policy entropy loss coefficient
+"MIN_KL_COEF": 0.0 # minimal KL loss coefficient
+"MAX_KL_COEF": 0.2 # maximal KL loss coefficient
+"KL_COEF_CONT": 0.00 # control policy initial KL loss coefficient
+"KL_COEF_COMM": 0.00 # communication policy initial KL loss coefficient
+"KL_TARGET_CONT": 0.01 # control policy target KL
+"KL_TARGET_COMM": 0.1 # communication policy target KL
+"VF_COEF": 0.5 # value loss coefficient
+"MAX_GRAD_NORM_AC": 0.5 # actors max loss gradient norm
+"MAX_GRAD_NORM_CR": 0.5 # critic max loss gradient norm
+"SEED": 0 # random seed
+"SAVE_FREQ": 0.1 # checkpoint frequency
+"NUM_EVAL_TRAJECTORIES": 10 # number of saved/evaluation trajectory at every checkpoint
+"LOG_INTERVAL": 1 # logging after this number of epochs
+"COMM_INTERVAL": 1 # number of consecutive epochs for training the communication policy
+"CONT_INTERVAL": 1 # number of consecutive epochs for training the control policy
+"SIMUL": 1 # boolean, whether to train the control and communication policies simultaneously
+"ANNEAL_LR": False # boolean, decaying learning rate
+"SAVE_PATH": "dense_coordinate" # name of directory to save checkpoints
+
+# environment params
 "ENV_KWARGS":
   "num_agents": 3
   "grid_size": 6
   "max_episode_len": 40
   "comm_type": 'dense'
-"ANNEAL_LR": False
-"SAVE_PATH": "dense_coordinate"
 
-# WandB Params
+# wandb params
 "PROJECT": "InGaMA-Coordinate"
